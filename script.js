@@ -420,3 +420,44 @@ document.addEventListener("mousemove", event => {
         `${event.clientY}px`;
 
 });
+/* =====================================================
+   PORTFOLIO PRELOADER
+===================================================== */
+
+document.body.classList.add("loading");
+
+const preloader = document.getElementById("preloader");
+const loaderPercent = document.getElementById("loaderPercent");
+const loaderProgress = document.getElementById("loaderProgress");
+
+let progress = 0;
+
+const loaderInterval = setInterval(() => {
+
+    progress += Math.floor(Math.random() * 4) + 1;
+
+    if (progress >= 100) {
+        progress = 100;
+        clearInterval(loaderInterval);
+
+        loaderPercent.textContent = "100%";
+        loaderProgress.style.width = "100%";
+
+        setTimeout(() => {
+
+            document.body.classList.remove("loading");
+            document.body.classList.add("loaded");
+
+            preloader.classList.add("hide");
+
+            setTimeout(() => {
+                preloader.remove();
+            }, 1000);
+
+        }, 500);
+    }
+
+    loaderPercent.textContent = progress + "%";
+    loaderProgress.style.width = progress + "%";
+
+}, 45);

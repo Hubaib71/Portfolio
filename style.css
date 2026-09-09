@@ -1419,3 +1419,342 @@ footer p {
     }
 
 }
+/* ==========================================
+   MODERN ANIMATIONS
+========================================== */
+
+
+/* Scroll Reveal */
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Staggered Cards */
+
+.skills-grid .skill-card:nth-child(1),
+.projects-grid .project-card:nth-child(1),
+.services-grid .service-card:nth-child(1) {
+    transition-delay: .05s;
+}
+
+.skills-grid .skill-card:nth-child(2),
+.projects-grid .project-card:nth-child(2),
+.services-grid .service-card:nth-child(2) {
+    transition-delay: .10s;
+}
+
+.skills-grid .skill-card:nth-child(3),
+.projects-grid .project-card:nth-child(3),
+.services-grid .service-card:nth-child(3) {
+    transition-delay: .15s;
+}
+
+.skills-grid .skill-card:nth-child(4),
+.projects-grid .project-card:nth-child(4),
+.services-grid .service-card:nth-child(4) {
+    transition-delay: .20s;
+}
+
+
+/* Navbar */
+
+.navbar {
+    transition:
+        background .4s ease,
+        box-shadow .4s ease,
+        backdrop-filter .4s ease;
+}
+
+.navbar-scrolled {
+    background: rgba(255,255,255,.96);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.08);
+}
+
+
+/* Active Navigation */
+
+.active-link {
+    color: #2563eb !important;
+}
+
+
+/* Hero Image Floating */
+
+.hero-image {
+    animation:
+        heroFloat 5s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Image Decoration */
+
+.image-decoration {
+    animation:
+        decorationFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes decorationFloat {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(2deg) translateY(-8px);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+/* Availability Dot */
+
+.availability span {
+    animation:
+        pulseDot 1.7s infinite;
+}
+
+@keyframes pulseDot {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(22,163,74,.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 9px rgba(22,163,74,0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(22,163,74,0);
+    }
+
+}
+
+
+/* Skill Hover */
+
+.skill-card {
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.skill-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.015);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.20);
+
+}
+
+
+/* Service Hover */
+
+.service-card {
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.service-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.08);
+
+}
+
+
+/* Project Card */
+
+.project-card {
+
+    transition:
+        transform .2s ease,
+        box-shadow .3s ease;
+
+    transform-style: preserve-3d;
+
+}
+
+.project-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37,99,235,.08);
+
+    top: -80px;
+    right: -80px;
+
+    transition: .5s;
+
+}
+
+.project-card:hover::before {
+
+    transform:
+        scale(2);
+
+}
+
+
+/* Buttons */
+
+.primary-button,
+.secondary-button {
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.primary-button:hover {
+
+    box-shadow:
+        0 15px 35px rgba(17,24,39,.25);
+
+}
+
+
+/* Cursor Glow */
+
+.cursor-glow {
+
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,.08),
+            transparent 70%
+        );
+
+    z-index: -1;
+
+}
+
+
+/* Timeline Animation */
+
+.timeline-content {
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+
+}
+
+.timeline-content:hover {
+
+    transform:
+        translateX(8px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.08);
+
+}
+
+
+/* Education */
+
+.education-symbol {
+
+    animation:
+        educationRotate 8s linear infinite;
+
+}
+
+@keyframes educationRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+
+    }
+
+}
